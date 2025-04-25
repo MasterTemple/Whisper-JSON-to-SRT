@@ -8,14 +8,6 @@ pub struct SrtTime {
     pub millis: u32,
 }
 
-impl SrtTime {
-    pub fn in_seconds(&self) -> f64 {
-        let seconds = (self.hours * 60 * 60 + self.minutes * 60 + self.seconds) as f64;
-        let millis = self.millis as f64 / 1000.0;
-        seconds + millis
-    }
-}
-
 impl Display for SrtTime {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(

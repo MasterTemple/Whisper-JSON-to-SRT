@@ -27,7 +27,7 @@ impl UnalignedWhisperXSegment {
             id: (idx + 1) as u32,
             start: SrtTime::from_seconds(self.start),
             end: SrtTime::from_seconds(self.end),
-            text: self.text,
+            text: self.text.trim().to_string(),
         }
     }
 }
